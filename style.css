@@ -1,0 +1,236 @@
+/*
+Theme Name: Muvipro
+Theme URI: https://www.idtheme.com/muvipro/
+Author: Gian MR
+Author URI: http://www.gianmr.com/
+Description: Fast load, seo and high CTR movie wordpress theme.
+Version: 2.1.8
+Requires at least: 5.5
+Tested up to: 6.1
+Requires PHP: 7.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: muvipro
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+
+Muvipro is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize.css
+# Sidr.css
+# Magnific-popup.css
+# tiny-slider.css
+# Elements
+# Forms
+# Navigation
+	## Menus
+	## Other Navigation
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
+
+
+/*--------------------------------------------------------------
+# Tabs
+--------------------------------------------------------------*/
+.gmr-server-wrap {
+	padding: 5px;
+	margin: 0 0 10px;
+	border-radius:5px;
+}
+.nav-tabs {
+	background-color: rgba(0,0,0,0.3);
+	padding: 5px 0;
+	margin: 0 0 0;
+	list-style: none;
+	border-radius:5px;
+}
+.nav-tabs > li {
+	float: left;
+	position: relative;
+	display: block;
+	margin: 0 5px;
+}
+.nav-tabs > li > .active,
+.nav-tabs > li.selected > a,
+.nav-tabs > li.selected > a:focus,
+.nav-tabs > li.selected > a:hover {
+	cursor: default;
+	background-color: rgba(0,0,0,0.2);
+	border-width: 0;
+}
+.nav-tabs > li > a {
+	line-height: 1.42857143;
+	color: #fff !important;
+	background-color: rgba(255,255,255,0.2);
+	border-width: 0;
+	position: relative;
+	display: block;
+	padding: 5px 10px;
+	border-radius:5px;
+}
+.muvipro_player_content {
+	position: relative;
+}
+.player-wrap {
+	position: relative;
+	z-index:9998;
+}
+.tab-content-ajax {
+	display: none;
+}
+.tab-content-ajax.selected {
+	display: block;
+}
+.player-wrap.relative-video {
+	z-index:10000;
+}
+@media (max-width:767px) {
+	.nav-tabs > li {
+		float: none;
+		text-align: center;
+		display: block;
+		margin: 0 5px 5px;
+	}
+}
+.fade {
+	opacity: 0;
+	-webkit-transition: opacity .15s linear;
+	-o-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}
+.fade.in {
+	opacity: 1;
+}
+.gmr-player-nav {
+	padding: 0;
+	margin: 0 0 0;
+	list-style: none;
+}
+.gmr-player-nav > li {
+	float: left;
+	position: relative;
+	display: block;
+	margin: 0;
+}
+.gmr-player-nav > li > button,
+.gmr-player-nav > li > a {
+	line-height: 1.4;
+	position: relative;
+	display: block;
+	padding: 10px 0;
+	margin-right: 15px;
+	color: #fff;
+}
+.gmr-player-nav > li.pull-right > button,
+.gmr-player-nav > li.pull-right > a {
+	margin: 5px 5px 5px 0;
+	margin-right: 0;
+	padding: 5px 10px;
+	border-radius:5px;
+}
+.gmr-player-nav > li > button svg,
+.gmr-player-nav > li > a svg {
+	font-size: 18px;
+	vertical-align: -0.2em;
+}
+#lightoff {
+	display: none;
+	background: #000;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .90;
+	z-index:9999;
+}
+
+@media (max-width:767px) {
+	.gmr-player-nav > li > a > span.text{
+		display:none !important;
+	}
+}
+
+/* Loading... */
+.muvipro-player-loading {
+	min-height: 50px;
+}
+.muvipro-player-loading:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.8);
+	z-index: 11;
+}
+.muvipro-player-loading:after {
+	content: "";
+	margin: 0 auto 0 auto;
+	font-size: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -1em;
+	margin-left: -1em;
+	z-index: 12;
+	text-indent: -9999em;
+	border-top: 0.4em solid rgba(0, 0, 0, 0.2);
+	border-right: 0.4em solid rgba(0, 0, 0, 0.2);
+	border-bottom: 0.4em solid rgba(0, 0, 0, 0.2);
+	border-left: 0.4em solid #000;
+	-webkit-animation: load8 0.5s infinite linear;
+	animation: load8 0.5s infinite linear;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+}
+
+@-webkit-keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes load8 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+
+
+
